@@ -1,23 +1,38 @@
-## macronator
+# macronator
 
-A VBA script that:
-```
-  1. Opens multiple workbooks.
-  2. Runs a different macro in each workbook.
-  3. Saves each workbook with a new name, and to a new directory.
-  4. Closes each workbook.
-  5. Prompts the user when finished
- ```
- *you will need to edit the code to make it work for yourself. VBA isn't my strong suite and I'm sure there's a more elegent way to accomplish this using loops. However, it gets the job done. 
+This VBA script automates the process of opening multiple Excel workbooks, executing a specified macro in each workbook, saving the workbooks with new names in a user-selected location, and closing the workbooks.
 
+## Prerequisites
 
-## setup
+- Microsoft Excel
 
-Make the following chnges to the code:
-```
-  1. Update the filepaths to point to your workbooks.
-  2. Update the save as names to whatever you want.
-  3. Update the save locations to a directory of your choosing.
-  4. Update the name of the macros that you will run in each workbook.
-```  
-The script is setup for 5 workbooks but I've tested it with 10 different workbooks with no issues.
+## Usage
+
+1. Open the Excel file containing the macro you want to execute.
+2. Press `Alt + F11` to open the Visual Basic Editor.
+3. Insert a new module or open an existing module.
+4. Copy and paste the VBA code from [`macronator_script.cls`](macronator_script.cls) into the module.
+5. Save the Excel file as a macro-enabled workbook with the extension `.xlsm`.
+6. Close the Visual Basic Editor.
+
+To run the script:
+
+1. Open the Excel file that contains the macro and the VBA script.
+2. Press `Alt + F8` to open the "Macro" dialog box.
+3. Select the `Multi_Excel_Macro_Automation` macro from the list.
+4. Click "Run" to execute the macro.
+
+The script will prompt you for the following inputs:
+
+- Macro Name: Enter the name of the macro you want to execute in each workbook.
+- Number of Workbooks: Enter the number of workbooks you want to process.
+- Save Location: Select the location where you want to save the new files.
+
+The script will then open a file picker dialog for each workbook, allowing you to select the files one by one. After selecting a workbook, the specified macro will be executed, and the workbook will be saved with a new name in the chosen save location. Once all the workbooks have been processed, a success message will be displayed.
+
+Please note that the script assumes the macro you want to execute exists in each selected workbook with the same name entered by you. Make sure to replace the file paths, file names, and macro names in the VBA code to match your specific requirements.
+
+## License
+
+This script is licensed under the [MIT License](Lisence.md).
+
